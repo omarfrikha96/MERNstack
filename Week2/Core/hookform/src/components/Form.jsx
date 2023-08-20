@@ -11,24 +11,24 @@ const Form = (props) => {
         <div>
           <form >
             <div className='label'>
-                <label>First Name: </label> 
-                <input type="text" onChange={ (e) => setFirstName(e.target.value) } value={firstName} />
+                <label htmlFor = "firstName">First Name: </label> 
+                <input type="text" name="firstName" onChange={ (e) => setFirstName(e.target.value) }  />
             </div>
             <div className='label'>
-                <label>Last Name: </label> 
-                <input type="text" onChange={ (e) => setLastname(e.target.value) } value={lastname} />
+                <label htmlFor = "lastname">Last Name: </label> 
+                <input type="text" name="lastname" onChange={ (e) => setLastname(e.target.value) }  />
             </div>
             <div className='label'>
-                <label>Email: </label> 
-                <input type="email" onChange={ (e) => setEmail(e.target.value) } value={email} />
+                <label htmlFor = "email">Email: </label> 
+                <input type="email" name="email" onChange={ (e) => setEmail(e.target.value) }  />
             </div>
             <div className='label'>
-                <label>Password: </label>
-                <input type="password" onChange={ (e) => setPassword(e.target.value) } value={password}  />
+                <label htmlFor = "password">Password: </label>
+                <input type="password" name="password"  onChange={ (e) => setPassword(e.target.value) }   />
             </div>
             <div className='label'>
-                <label>Password: </label>
-                <input type="password" onChange={ (e) => setPasswordConfirm(e.target.value) } value={passwordConfirm}  />
+                <label htmlFor = "passwordConfirm">Password: </label>
+                <input type="password" name="passwordConfirm" onChange={ (e) => setPasswordConfirm(e.target.value) }  />
             </div>
             
         </form> 
