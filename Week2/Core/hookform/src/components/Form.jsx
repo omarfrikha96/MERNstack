@@ -36,10 +36,10 @@ const Form = (props) => {
         <h2> Your Form Data</h2> 
 
     <p>First name: {firstName} </p>
-    <p>First name: {lastname} </p>
-    <p>First name: {email} </p>
-    <p>First name: {password} </p>
-    <p>First name: {passwordConfirm} </p>
+    <p>lastname: {lastname} </p>
+    <p>email: {email} </p>
+    <p>password: {password} </p>
+    <p>passwordConfirm: {passwordConfirm} </p>
    
         </div>
         
