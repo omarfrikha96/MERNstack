@@ -8,17 +8,18 @@ function App() {
 
   const submitFunction = (e) => {
     e.preventDefault();
-
-    if (todo.length > 0) {
+    if (todo.length === 0) {
+      return;
+    }
       const item = {
         text: todo,
         complete: false,
-      };
-
+      }
       setListTodo([...listTodo, item]);
-    }
     setTodo("");
   };
+
+
 
   const deleteFunction = (deleted) => {
     const filtredList = listTodo.filter((element, index) => {
@@ -27,18 +28,17 @@ function App() {
     setListTodo(filtredList);
   };
 
-  const checkFunction = (e) => {
-    const newTodoList = listTodo.maps((element, index) => {
-      if (e === index) {
-        listTodo.complete = !listTodo.complete;
-        // const updateTodoList = {...listTodo , complete : !listTodo.complete}
-        // return updateTodoList;
-      }
-      return listTodo;
-    });
+  
+  function checkFunction(index) {
+    const obj = {...listTodo[index]};
 
-    setListTodo(newTodoList);
-  };
+    obj.complete = !obj.complete;
+
+    setListTodo([...listTodo.slice(0, index), obj]
+    .concat(listTodo.slice(index + 1)));
+  }
+
+
   return (
     <div className="App">
       <form onSubmit={submitFunction}>
