@@ -8,5 +8,7 @@ const JokeSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Joke = mongoose.model("Joke", JokeSchema);
-module.exports = Joke;
+// const Joke = mongoose.model("Joke", JokeSchema);
+// module.exports = Joke;
+
+module.exports = mongoose.model("Joke", JokeSchema);
