@@ -3,10 +3,13 @@ import axios from 'axios'
 import '../App.css';
 
 
-const Form = () => {
+const Form = (props) => {
+    const {products, setProducts} = props;
+    
     const[title, setTitle] = useState("")
     const[price, setPrice] = useState("")
     const[description, setDescription] = useState("")
+
     
     const sumbitHandler = (e) => {
         e.preventDefault()
@@ -18,6 +21,7 @@ const Form = () => {
         axios.post('http://localhost:5000/api/products' , list)
         .then((res)=>{
             console.log("sucessfully submited")
+            setProducts([...products , res.data])
             setTitle("")
             setPrice("")
             setDescription("")
@@ -50,3 +54,4 @@ const Form = () => {
 }
 
 export default Form
+

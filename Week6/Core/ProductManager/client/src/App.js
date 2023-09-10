@@ -1,11 +1,15 @@
 import './App.css';
-import Form from './Components/Form';
+import {Routes , Route} from 'react-router-dom';
+import Main from './Views/Main';
+
 
 function App() {
   return (
     <div className="App">
-
-    <Form />
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+      </Routes>
+    
 
     </div>
   );
