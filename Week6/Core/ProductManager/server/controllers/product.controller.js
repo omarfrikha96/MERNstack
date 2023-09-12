@@ -24,3 +24,17 @@ module.exports.getOneProduct = (req , res)=>{
             .catch(err=> console.log(err))
         }
     
+ //update       
+ module.exports.updateProduct = (request, response) => {
+    Product.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
+         .then(updatedProduct => response.json(updatedProduct))
+        .catch(err => response.json(err))
+ }
+
+
+ //delete
+ module.exports.deleteProduct = (request, response) => {
+    Product.deleteOne({ _id: request.params.id }) //note: "id" here MUST match id in corresponding route
+        .then(deleteConfirmation => response.json(deleteConfirmation))
+        .catch(err => response.json(err))
+}

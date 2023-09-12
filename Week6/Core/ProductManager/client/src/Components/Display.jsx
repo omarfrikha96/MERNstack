@@ -18,16 +18,31 @@ const Display = (props) => {
             .catch((err) => console.log(err));
     }, []); 
 
+    const deleteProduct = (proId)=>{
+        axios.delete(`http://localhost:5000/api/products/${proId}`)
+        console.log(`Your element with id ${proId} is deleted`)
+        //filter (display after delete)
+        const filtredProduct = products.filter(eachProduct =>{
+            if (eachProduct._id === proId) {
+                return false
+            } else {
+                return true
+            }
+        })
+        setProducts(filtredProduct)
+    }
+
     return (
-        <div>
+        <div >
             <header>
                 All Products:
             </header>
             {
                 products.map((product, index) => (
-                    <div key={index}>
+                    <div key={index} className="product">
                     <Link to={product._id}>    {product.title} </Link>
-                         
+                    
+                    <button className="btn" onClick={()=>{deleteProduct(product._id)}}>Delete</button>
 
                     </div>
                 ))
