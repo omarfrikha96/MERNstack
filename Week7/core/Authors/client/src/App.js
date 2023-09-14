@@ -4,6 +4,7 @@ import DisplayAll from './components/DisplayAll';
 import Edit from './components/Edit';
 import AuthorForm from './components/AuthorForm';
 import PageNotFound from './components/PageNotFound';
+import Details from './components/Details';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/new" element={<AuthorForm />} />
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path='element/:id' element={<Details/>} />
         </Routes>
 
     </div>

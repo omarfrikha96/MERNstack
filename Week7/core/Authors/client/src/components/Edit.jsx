@@ -18,7 +18,7 @@ const Edit = () => {
             setName(res.data.Name)
           })
           .catch(err => console.log(err))
-  }, [])
+  }, [id])
 
   const updateAuthor = (e) => {
       e.preventDefault();

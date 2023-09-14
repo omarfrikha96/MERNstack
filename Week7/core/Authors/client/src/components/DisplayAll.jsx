@@ -16,14 +16,14 @@ const DisplayAll = () => {
       });
   }, []);
 
-  const handleDeleteAuthor = (idFromBelow) => {
+  const handleDeleteAuthor = (id) => {
     axios
-      .delete(`http://localhost:5000/api/authors/${idFromBelow}`)
+      .delete(`http://localhost:5000/api/authors/${id}`)
       .then((response) => {
         console.log("success deleting author");
         console.log(response);
         const filteredAuthors = allAuthors.filter((author) => {
-          return author._id !== idFromBelow;
+          return author._id !== id;
         });
         setAllAuthors(filteredAuthors);
       })
@@ -58,10 +58,14 @@ const DisplayAll = () => {
                .map((author) => {
                 return (
                   <tr key={author._id}>
-                    <td>{author.Name}</td>
                     <td>
-                      <Link to={`/edit/${author._id}`}>
-                        <button className="btn btn-primary">Edit</button>
+                    <Link to={`/element/${author._id}`}>
+                        {author.Name}
+                      </Link>
+                    </td>
+                    <td>
+                      <Link to={`/edit/${author._id}`} className="btn btn-primary">
+                        Edit
                       </Link>
                       &nbsp;&nbsp;
                       <button
