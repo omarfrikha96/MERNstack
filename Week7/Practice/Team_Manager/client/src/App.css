@@ -1,0 +1,24 @@
+.sub-nav-text{
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.nav-text{
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.green-playing-btn {
+  background-color: green;
+  color: white;
+}
+
+.red-not-playing-btn {
+  background-color: red;
+  color: white;
+}
+
+.yellow-undecided-btn {
+  background-color: yellow;
+  color: black;
+}
